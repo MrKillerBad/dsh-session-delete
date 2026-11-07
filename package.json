@@ -1,0 +1,54 @@
+{
+  "name": "dsh-session-delete",
+  "version": "1.1.0",
+  "type": "module",
+  "description": "Permanently delete a Session from the sidebar context menu.",
+  "license": "MIT",
+  "author": "MrKillerBad",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrKillerBad/dsh-session-delete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrKillerBad/dsh-session-delete/issues"
+  },
+  "homepage": "https://github.com/MrKillerBad/dsh-session-delete#readme",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "session",
+    "delete"
+  ],
+  "icon": "./icon.svg",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "icon.png",
+    "screenshots.json"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-context-menu",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}
