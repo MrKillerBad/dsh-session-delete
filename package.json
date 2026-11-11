@@ -1,5 +1,5 @@
 {
-  "name": "dsh-session-delete",
+  "name": "@mrkillerbad/dsh-session-delete",
   "version": "1.1.0",
   "type": "module",
   "description": "Permanently delete a Session from the sidebar context menu.",
@@ -34,7 +34,10 @@
     "locale/*.json",
     "icon.svg",
     "icon.png",
-    "screenshots.json"
+    "screenshots.json",
+    "screenshots/*.png",
+    "README.md",
+    "LICENSE"
   ],
   "dsh": {
     "bundle": {
@@ -50,5 +53,9 @@
         "@deepseek-ai/dsh-client-ui-workspace"
       ]
     }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }

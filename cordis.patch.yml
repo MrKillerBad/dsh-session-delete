@@ -1,3 +1,12 @@
+# dsh-session-delete bundle patch: mounts the session-delete plugin into the
+# host composition of a dsh profile.
+#
+# Install: `dsh plugin --profile <name> add @mrkillerbad/dsh-session-delete`
+# (npm or a local path). The `dsh plugin` command pnpm-installs the package into
+# the profile and reconciles it into the profile's `dsh.profile.bundles` list.
 - insert:
     - id: session-delete
-      name: 'dsh-session-delete'
+      # Node-resolvable package name — must stay in sync with package.json
+      # `name`. Quoted because `@` is a reserved indicator in YAML and cannot
+      # open a plain scalar.
+      name: '@mrkillerbad/dsh-session-delete'
